@@ -8,8 +8,8 @@ module Contenteditable
 
     def update
       params[:translations].each do |p|
-        t = Translation.find_or_initialize_by_key(p[0])
-        t.update_attributes(:value => p[1])
+        I18n.backend.store_translations(
+          params[:locale] || "en", {p[0] => p[1]}, :escape => false)
       end
       head :status => 204
     end

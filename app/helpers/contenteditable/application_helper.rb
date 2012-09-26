@@ -2,11 +2,10 @@ module Contenteditable
   module ApplicationHelper
 
     def ceditable(key, tag="span", html_options={})
-      content = Translation.find_by_key(key).try(:value) || ""
-      # content = I18n.t(key)
+      params[:locale] ||= "en"
+      content = I18n.t(key)
 
       if is_authorized?
-        content = "this is editable" if content.blank?
         html_options.merge!(:contenteditable => true, "data-tag" => key)
       end
       content_tag(tag, content, html_options)

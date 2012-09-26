@@ -3,9 +3,11 @@ require 'rails/generators'
 module Contenteditable
   module Generators
     class InstallGenerator < Rails::Generators::Base
+      source_root File.expand_path("../templates", __FILE__)
 
-      def create_initializer_file
-        create_file "config/initializers/contenteditable.rb", "# Add initialization content here"
+      def create_initializer_files
+        template "locale_initializer.rb", "config/initializers/locale.rb"
+        template "contenteditable_initializer.rb", "config/initializers/contenteditable.rb"
       end
 
       def installation
