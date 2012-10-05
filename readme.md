@@ -7,6 +7,7 @@ Contenteditable helps to integrate an easy CRM system to provide a client an opp
 * Generates a table to keep the data
 * Uses contenteditable HTML5 tag
 
+demo: http://www.youtube.com/watch?v=WRt5WoQQajU&feature=youtu.be
 
 ## Installation
 
