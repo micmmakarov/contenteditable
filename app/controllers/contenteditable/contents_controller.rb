@@ -9,7 +9,7 @@ module Contenteditable
     def update
       params[:translations].each do |p|
         I18n.backend.store_translations(
-          params[:locale] || "en", {p[0] => p[1]}, :escape => false)
+          params[:locale] || "en", {p[0] => p[1].strip}, :escape => false)
       end
       head :status => 204
     end
