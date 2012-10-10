@@ -13,7 +13,7 @@ demo: http://www.youtube.com/watch?v=WRt5WoQQajU&feature=youtu.be
 
 ### Install gem
 
->gem "contenteditable", :github => 'micmmakarov/contenteditable_lite'
+>gem "contenteditable", :github => 'micmmakarov/contenteditable'
 
 >bundle install
 
