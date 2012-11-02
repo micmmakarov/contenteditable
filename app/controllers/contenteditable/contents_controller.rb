@@ -7,8 +7,11 @@ module Contenteditable
     before_filter :filter_for_ce
 
     def update
+      ar_backend = I18n.backend.backends.find do |b|
+        b.class.to_s.match /ActiveRecord/
+      end
       params[:translations].each do |p|
-        I18n.backend.store_translations(
+        ar_backend.store_translations(
           params[:locale] || "en", {p[0] => p[1].strip}, :escape => false)
       end
       head :status => 204
