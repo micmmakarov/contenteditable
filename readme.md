@@ -52,6 +52,15 @@ contenteditable_filter :autintificate_admin!
 this is an analog of "before_filter" if you use devise. Editable interface will be only provided to admins in this case.
 
 
+### Rails 3.2.x fix
+
+Add this to your Gemfile:
+
+    gem 'i18n-active_record',
+      :git => 'git://github.com/svenfuchs/i18n-active_record.git',
+      :branch => 'rails-3.2',
+      :require => 'i18n/active_record'
+
 ### Enjoy
 
 First version must be buggy. Fix it if you find!
