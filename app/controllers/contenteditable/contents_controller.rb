@@ -1,7 +1,7 @@
-require_dependency "contenteditable/application_controller"
+require_dependency "contenteditable/contenteditable_controller"
 
 module Contenteditable
-  class ContentsController < ApplicationController
+  class ContentsController < ContenteditableController
     include ApplicationHelper
 
     before_filter :filter_for_ce
