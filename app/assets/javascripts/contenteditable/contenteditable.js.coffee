@@ -1,4 +1,4 @@
-$("document").ready ->
+$ ->
 
   $('[contenteditable]')
     .live 'focus', ->
@@ -12,7 +12,7 @@ $("document").ready ->
         $this.trigger('change')
         $(".contenteditable_save_button").fadeIn(1000)
 
-  $('.contenteditable_save_button').click ->
+  $(document).on 'click', '.contenteditable_save_button', ->
     c = $("[contenteditable]")
     data1 = {}
     c.each -> data1[$(this).attr('data-tag')] = $(this).text()
