@@ -1,5 +1,11 @@
 require_dependency "contenteditable/contenteditable_controller"
 
+class I18n::Backend::ActiveRecord::Translation
+  if defined?(:attr_accessible)
+    attr_accessible :locale, :key, :value
+  end
+end
+
 module Contenteditable
   class ContentsController < ContenteditableController
     include ApplicationHelper
